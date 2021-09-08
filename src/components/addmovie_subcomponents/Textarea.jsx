@@ -23,7 +23,7 @@ class Textarea extends React.Component {
 
 Textarea.propTypes = {
   storyline: PropTypes.string,
-  callback: PropTypes.string,
+  callback: PropTypes.func,
 }.isRequired;
 
 export default Textarea;

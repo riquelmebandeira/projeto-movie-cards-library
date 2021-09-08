@@ -48,6 +48,7 @@ TextInputs.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   imagePath: PropTypes.string,
+  callback: PropTypes.func,
 }.isRequired;
 
 export default TextInputs;
