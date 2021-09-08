@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInputs from './addmovie_subcomponents/TextInputs';
+import Textarea from './addmovie_subcomponents/Textarea';
 
 class AddMovie extends React.Component {
   constructor() {
@@ -8,15 +9,15 @@ class AddMovie extends React.Component {
       subtitle: '',
       title: '',
       imagePath: '',
-      // storyline: '',
+      storyline: '',
       // rating: 0,
       // genre: 'action',
     };
 
-    this.handleTextInputs = this.handleTextInputs.bind(this);
+    this.handleInputText = this.handleInputText.bind(this);
   }
 
-  handleTextInputs(event) {
+  handleInputText(event) {
     this.setState(
       { [event.target.name]: event.target.value },
     );
@@ -24,14 +25,18 @@ class AddMovie extends React.Component {
 
   render() {
     // const { onClick } = this.props;
-    const { subtitle, title, imagePath } = this.state;
+    const { subtitle, title, imagePath, storyline } = this.state;
     return (
       <form data-testid="add-movie-form">
         <TextInputs
           title={ title }
           subtitle={ subtitle }
           imagePath={ imagePath }
-          callback={ this.handleTextInputs }
+          callback={ this.handleInputText }
+        />
+        <Textarea
+          storyline={ storyline }
+          callback={ this.handleInputText }
         />
       </form>
     );
