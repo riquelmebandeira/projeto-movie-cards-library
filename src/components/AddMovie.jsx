@@ -2,6 +2,7 @@ import React from 'react';
 import TextInputs from './addmovie_subcomponents/TextInputs';
 import Textarea from './addmovie_subcomponents/Textarea';
 import NumberInput from './addmovie_subcomponents/NumberInput';
+import Select from './addmovie_subcomponents/Select';
 
 class AddMovie extends React.Component {
   constructor() {
@@ -12,7 +13,7 @@ class AddMovie extends React.Component {
       imagePath: '',
       storyline: '',
       rating: 0,
-      // genre: 'action',
+      genre: 'action',
     };
 
     this.handleFormData = this.handleFormData.bind(this);
@@ -26,7 +27,7 @@ class AddMovie extends React.Component {
 
   render() {
     // const { onClick } = this.props;
-    const { subtitle, title, imagePath, storyline, rating } = this.state;
+    const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (
       <form data-testid="add-movie-form">
         <TextInputs
@@ -41,6 +42,10 @@ class AddMovie extends React.Component {
         />
         <NumberInput
           rating={ rating }
+          callback={ this.handleFormData }
+        />
+        <Select
+          genre={ genre }
           callback={ this.handleFormData }
         />
       </form>
