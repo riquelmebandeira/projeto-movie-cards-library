@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInputs from './addmovie_subcomponents/TextInputs';
+import TextInput from './addmovie_subcomponents/TextInput';
 import Textarea from './addmovie_subcomponents/Textarea';
 import NumberInput from './addmovie_subcomponents/NumberInput';
 import Select from './addmovie_subcomponents/Select';
@@ -48,10 +48,22 @@ class AddMovie extends React.Component {
     const { subtitle, title, imagePath, storyline, rating, genre } = this.state;
     return (
       <form data-testid="add-movie-form">
-        <TextInputs
-          title={ title }
-          subtitle={ subtitle }
-          imagePath={ imagePath }
+        <TextInput
+          labelText="Título"
+          name="title"
+          value={ title }
+          callback={ this.handleFormData }
+        />
+        <TextInput
+          labelText="Subtítulo"
+          name="subtitle"
+          value={ subtitle }
+          callback={ this.handleFormData }
+        />
+        <TextInput
+          labelText="Imagem"
+          name="imagePath"
+          value={ imagePath }
           callback={ this.handleFormData }
         />
         <Textarea
