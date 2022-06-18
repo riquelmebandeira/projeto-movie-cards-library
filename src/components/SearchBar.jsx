@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     } = this.props;
 
     return (
-      <form data-testid="search-bar-form">
+      <form className="search-bar-form">
         <label htmlFor="text-field" data-testid="text-input-label">
           Inclui o texto:
           <input
@@ -18,17 +18,6 @@ class SearchBar extends React.Component {
             value={ searchText }
             data-testid="text-input"
             onChange={ onSearchTextChange }
-          />
-        </label>
-        <label htmlFor="checkbox-field" data-testid="checkbox-input-label">
-          Mostrar somente favoritos
-          <input
-            type="checkbox"
-            name="bookmarkedOnly"
-            id="checkbox-field"
-            checked={ bookmarkedOnly }
-            onChange={ onBookmarkedChange }
-            data-testid="checkbox-input"
           />
         </label>
         <label htmlFor="select-field" data-testid="select-input-label">
@@ -45,6 +34,17 @@ class SearchBar extends React.Component {
             <option value="comedy" data-testid="select-option">Comédia</option>
             <option value="thriller" data-testid="select-option">Suspense</option>
           </select>
+        </label>
+        <label htmlFor="checkbox-field" className="checkbox-input-label">
+          Mostrar somente favoritos
+          <input
+            type="checkbox"
+            name="bookmarkedOnly"
+            id="checkbox-field"
+            checked={ bookmarkedOnly }
+            onChange={ onBookmarkedChange }
+            data-testid="checkbox-input"
+          />
         </label>
       </form>
     );

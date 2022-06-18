@@ -22,7 +22,9 @@ body {
 .movie-list {
   display: flex;
   flex-flow: row wrap;
+  margin: auto;
   padding: 48px 30px;
+  width: 1300px;
 }
 
 .movie-card {
@@ -81,3 +83,50 @@ body {
   justify-content: flex-end;
   padding: 12px 20px;
 }
+
+
+/* formulários */
+form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar-form {
+  display: flex;
+  gap: 40px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 8px 40px;
+  width: 1300px;
+}
+
+.search-bar-form > * {
+  width: 100%;
+}
+
+.search-bar-form > :nth-child( 3 ) {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 60px;
+  padding: 20px 40px;
+  row-gap: 14px;
+  width: 1300px;
+}
+
+.add-movie-form > * {
+  margin: auto;
+  width: 100%;
+}
+
+.add-movie-form textarea {
+  height: 90px;
+}
+
